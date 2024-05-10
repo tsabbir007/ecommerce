@@ -1,5 +1,6 @@
 <?php
 include 'common/header.php';
+session_start();
 ?>
 
 
@@ -21,27 +22,13 @@ include 'common/header.php';
                         <!-- Link--><a class="nav-link" href="shop.php">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <!-- Link--><a class="nav-link" href="detail.html">Product detail</a>
-                    </li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="pagesDropdown" href="#"
-                                                     data-bs-toggle="dropdown" aria-haspopup="true"
-                                                     aria-expanded="false">Pages</a>
-                        <div class="dropdown-menu mt-3 shadow-sm" aria-labelledby="pagesDropdown"><a
-                                    class="dropdown-item border-0 transition-link" href="index.html">Homepage</a><a
-                                    class="dropdown-item border-0 transition-link" href="shop.php">Category</a><a
-                                    class="dropdown-item border-0 transition-link" href="detail.html">Product
-                                detail</a><a class="dropdown-item border-0 transition-link" href="cart.html">Shopping
-                                cart</a><a class="dropdown-item border-0 transition-link"
-                                           href="checkout.html">Checkout</a>
-                        </div>
+                        <!-- Link--><a class="nav-link" href="cart.php">Cart</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="cart.html"> <i
-                                    class="fas fa-dolly-flatbed me-1 text-gray"></i>Cart<small
-                                    class="text-gray fw-normal">(2)</small></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!"> <i class="far fa-heart me-1"></i><small
-                                    class="text-gray fw-normal"> (0)</small></a></li>
+<!--                    <li class="nav-item"><a class="nav-link" href="cart.php"> <i-->
+<!--                                    class="fas fa-dolly-flatbed me-1 text-gray"></i>Cart-->
+<!--                            <small class="text-gray fw-normal">(--><?php //echo count($_SESSION['cart']) ?><!--)</small></a></li></small></a></li>-->
 
                     <?php
 

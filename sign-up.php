@@ -16,7 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = mysqli_query($con, $insert_user_query);
 
     if ($result) {
-        echo "User created successfully.";
+        $_SESSION['user'] = [
+            'name' => $name,
+            'username' => $username,
+            'password' => $password
+        ];
+        header('Location: index.php');
     } else {
         echo "Error creating user.";
     }

@@ -1,55 +1,10 @@
 <?php global $con;
-session_start();
 include './common/header.php';
+include './common/nav.php';
 
 ?>
 
 <div class="page-holder">
-    <!-- navbar-->
-    <header class="header bg-white">
-        <div class="container px-lg-3">
-            <nav class="navbar navbar-expand-lg navbar-light py-3 px-lg-0"><a class="navbar-brand"
-                                                                              href="index.php"><span
-                            class="fw-bold text-uppercase text-dark">Boutique</span></a>
-                <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <!-- Link--><a class="nav-link" href="index.php">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <!-- Link--><a class="nav-link active" href="shop.php">Shop</a>
-                        </li>
-                        <li class="nav-item">
-                            <!-- Link--><a class="nav-link" href="detail.php">Product detail</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
-                            <div class="dropdown-menu mt-3 shadow-sm" aria-labelledby="pagesDropdown"><a
-                                        class="dropdown-item border-0 transition-link" href="index.php">Homepage</a><a
-                                        class="dropdown-item border-0 transition-link" href="shop.html">Category</a><a
-                                        class="dropdown-item border-0 transition-link" href="detail.php">Product
-                                    detail</a><a class="dropdown-item border-0 transition-link" href="cart.php">Shopping
-                                    cart</a><a class="dropdown-item border-0 transition-link" href="checkout.html">Checkout</a>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="cart.php"> <i
-                                        class="fas fa-dolly-flatbed me-1 text-gray"></i>Cart<small
-                                        class="text-gray fw-normal">(2)</small></a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!"> <i class="far fa-heart me-1"></i><small
-                                        class="text-gray fw-normal"> (0)</small></a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!"> <i
-                                        class="fas fa-user me-1 text-gray fw-normal"></i>Login</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
     <!--  Modal -->
     <div class="container">
         <!-- HERO SECTION-->
@@ -127,7 +82,7 @@ include './common/header.php';
                                             <div class='product-overlay'>
                                                 <ul class='mb-0 list-inline'>
                                                     <li class='list-inline-item m-0 p-0'><a class='btn btn-sm btn-outline-dark' href='#!'><i class='far fa-heart'></i></a></li>
-                                                    <li class='list-inline-item m-0 p-0'><a class='btn btn-sm btn-dark' href='cart.php'>Add to cart</a></li>
+                                                    <li class='list-inline-item m-0 p-0'><a class='btn btn-sm btn-dark' href='cart.php?id=" . $row['id'] . "&action=add'>Add to cart</a></li>
                                                     <li class='list-inline-item mr-0'><a class='btn btn-sm btn-outline-dark' href='#productView' data-bs-toggle='modal'><i class='fas fa-expand'></i></a></li>
                                                 </ul>
                                             </div>

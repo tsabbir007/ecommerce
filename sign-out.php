@@ -1,9 +1,7 @@
 <?php
-include 'includes/config.php';
+session_start();
+session_unset();
+session_destroy();
+header("Location: index.php"); // Redirect to your homepage or wherever appropriate
+exit();
 
-//do sign out action
-if (isset($_GET['action']) && $_GET['action'] == 'sign-out') {
-    unset($_SESSION['user']);
-    header('Location: index.php');
-}
-?>
