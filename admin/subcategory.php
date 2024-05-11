@@ -102,10 +102,8 @@ include 'header.php';
                     </button>
                 </div>
                 <input type="hidden" name="subcategory_id" id="edit_subcategory_id">
-                <div class="modal-body
-                ">
-                    <div class="form-group
-                    ">
+                <div class="modal-body">
+                    <div class="form-group">
                         <label for="edit_subcategory_name">Subcategory Name:</label>
                         <input type="text" class="form-control" id="edit_subcategory_name" name="edit_subcategory_name" required>
                     </div>
@@ -137,6 +135,16 @@ include 'header.php';
 <!-- Edit Subcategory by ajax -->
 <script>
     $(document).ready(function() {
+        $('.edit-btn').click(function() {
+            var subcategoryId = $(this).data('subcategory-id');
+            var subcategoryName = $(this).data('subcategory-name');
+            var categoryId = $(this).data('category-id');
+
+            $('#edit_subcategory_id').val(subcategoryId);
+            $('#edit_subcategory_name').val(subcategoryName);
+            $('#edit_category_id').val(categoryId);
+        });
+
         $('#editSubcategoryModal form').submit(function(e) {
             e.preventDefault();
             var subcategoryId = $('#edit_subcategory_id').val();
@@ -152,7 +160,6 @@ include 'header.php';
                     category_id: categoryId
                 },
                 success: function(response) {
-                    alert(response);
                     window.location.reload();
                 }
             });
@@ -166,19 +173,17 @@ include 'header.php';
     $(document).ready(function() {
         $('.delete-btn').click(function() {
             var subcategoryId = $(this).data('subcategory-id');
-            if (confirm('Are you sure you want to delete this subcategory?')) {
-                $.ajax({
-                    type: 'POST',
-                    url: 'crud/delete_subcategory.php',
-                    data: {
-                        subcategory_id: subcategoryId
-                    },
-                    success: function(response) {
-                        // alert(response);
-                       window.location.reload();
-                    }
-                });
-            }
+
+            $.ajax({
+                type: 'POST',
+                url: 'crud/delete_subcategory.php',
+                data: {
+                    subcategory_id: subcategoryId
+                },
+                success: function(response) {
+                    window.location.reload();
+                }
+            });
         });
     });
 

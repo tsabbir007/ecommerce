@@ -26,6 +26,45 @@ if (mysqli_query($con, $create_user_table_query)) {
     echo "Error creating table: " . mysqli_error($con) . "\n";
 }
 
+//create order table
+$create_order_table_query = "CREATE TABLE IF NOT EXISTS orders (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    user_id INT(11),
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(255) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    post_code VARCHAR(255) NOT NULL,
+    country VARCHAR(255) NOT NULL,
+    payment_method VARCHAR(255) NOT NULL,
+    total DECIMAL(10,2) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+)";
+
+if (mysqli_query($con, $create_order_table_query)) {
+//    echo "Table 'orders' created successfully.\n";
+} else {
+    echo "Error creating table: " . mysqli_error($con) . "\n";
+}
+
+//create order_items table
+$create_order_items_table_query = "CREATE TABLE IF NOT EXISTS order_items (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    order_id INT(11),
+    product_id INT(11),
+    quantity INT(11) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (order_id) REFERENCES orders(id),
+    FOREIGN KEY (product_id) REFERENCES products(id)
+)";
+
+if (mysqli_query($con, $create_order_items_table_query)) {
+//    echo "Table 'order_items' created successfully.\n";
+} else {
+    echo "Error creating table: " . mysqli_error($con) . "\n";
+}
+
 
 //check if exists product table
 $check_product_table_query = "SELECT 1 FROM products LIMIT 1";

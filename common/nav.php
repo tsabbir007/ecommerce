@@ -8,7 +8,7 @@ session_start();
     <div class="container px-lg-3">
         <nav class="navbar navbar-expand-lg navbar-light py-3 px-lg-0"><a class="navbar-brand"
                                                                           href="index.php"><span
-                        class="fw-bold text-uppercase text-dark">Boutique</span></a>
+                        class="fw-bold text-uppercase text-dark">Shooopify</span></a>
             <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
@@ -23,6 +23,9 @@ session_start();
                     </li>
                     <li class="nav-item">
                         <!-- Link--><a class="nav-link" href="cart.php">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Link--><a class="nav-link" href="order-list.php">Order List</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">

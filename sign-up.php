@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result) {
         $_SESSION['user'] = [
+            'id' => mysqli_insert_id($con),
             'name' => $name,
             'username' => $username,
             'password' => $password

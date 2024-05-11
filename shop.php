@@ -78,12 +78,11 @@ include './common/nav.php';
                                 echo "<div class='col-lg-4 col-sm-6'>
                                     <div class='product text-center'>
                                         <div class='mb-3 position-relative'>
-                                            <div class='badge text-white bg-'></div><a class='d-block' href='detail.php'><img class='img-fluid w-100' src='../ecommerce/assets/images/" . $row['image_url'] . "' alt='...'></a>
+                                            <div class='badge text-white bg-'></div><a class='d-block' href='detail.php?product_id=" . $row['id'] . "'>
+                                            <img class='img-fluid w-100' src='../ecommerce/assets/images/" . $row['image_url'] . "' alt='...'></a>
                                             <div class='product-overlay'>
                                                 <ul class='mb-0 list-inline'>
-                                                    <li class='list-inline-item m-0 p-0'><a class='btn btn-sm btn-outline-dark' href='#!'><i class='far fa-heart'></i></a></li>
-                                                    <li class='list-inline-item m-0 p-0'><a class='btn btn-sm btn-dark' href='cart.php?id=" . $row['id'] . "&action=add'>Add to cart</a></li>
-                                                    <li class='list-inline-item mr-0'><a class='btn btn-sm btn-outline-dark' href='#productView' data-bs-toggle='modal'><i class='fas fa-expand'></i></a></li>
+                                                    <li class='list-inline-item m-0 p-0'><a class='btn btn-sm btn-dark' href='cart.php?product_id=" . $row['id'] . "&action=add&quantity=1'>Add to cart</a></li>
                                                 </ul>
                                             </div>
                                         </div>

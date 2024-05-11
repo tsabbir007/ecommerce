@@ -25,9 +25,12 @@
     <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/boutique/2-0/css/custom.0a822280.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="https://d19m59y37dris4.cloudfront.net/boutique/2-0/img/favicon.937cfaa3.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 <body>
 
 <?php
 session_start();
+error_reporting(0);
 include 'includes/config.php';
