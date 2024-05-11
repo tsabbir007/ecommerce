@@ -1,39 +1,29 @@
--- Inserting dummy data into the category table
-INSERT INTO category (name)
-VALUES ('Clothes'),
-       ('Shoes'),
-       ('Watches'),
-       ('Electronics'),
-       ('Others');
+INSERT INTO category (name, image_url)
+VALUES ('Clothing', 'clothes-cat.jpeg'),
+       ('Shoes', 'shoes-cat.jpeg'),
+       ('Watches', 'watches-cat.jpeg'),
+       ('Electronics', 'electronics-cat.jpeg');
 
--- Inserting dummy data into the sub_category table
 INSERT INTO sub_category (name, category_id)
-VALUES ('T-Shirts', (SELECT id FROM category WHERE name = 'Clothes')),
-       ('Sweater', (SELECT id FROM category WHERE name = 'Clothes')),
-       ('Nike', (SELECT id FROM category WHERE name = 'Shoes')),
-       ('Adidas', (SELECT id FROM category WHERE name = 'Shoes')),
-       ('Smart-watch', (SELECT id FROM category WHERE name = 'Watches')),
-       ('Analog-watch', (SELECT id FROM category WHERE name = 'Watches')),
-       ('Camera', (SELECT id FROM category WHERE name = 'Electronics')),
-       ('Lens', (SELECT id FROM category WHERE name = 'Electronics'));
+VALUES ('T-Shirts', 1),
+       ('Analog Watches', 2),
+       ('Digital Watches', 2),
+       ('Jeans', 1),
+       ('Sneakers', 2),
+       ('Smart Watches', 3),
+       ('Laptops', 4),
+       ('Headphones', 4),
+       ('Cameras', 4);
 
--- Inserting dummy data into the products table
-INSERT INTO products (name, price, description, image_url, category_id, sub_category_id)
-VALUES ('Plain T-Shirt', 15.99, 'Comfortable cotton t-shirt', 'tshirt.jpg',
-        (SELECT id FROM category WHERE name = 'Clothes'), (SELECT id FROM sub_category WHERE name = 'T-Shirts')),
-       ('Warm Sweater', 29.99, 'Soft and cozy sweater for winter', 'sweater.jpg',
-        (SELECT id FROM category WHERE name = 'Clothes'), (SELECT id FROM sub_category WHERE name = 'Sweater')),
-       ('Nike Air Max', 99.99, 'Stylish Nike sneakers', 'nike.jpg',
-        (SELECT id FROM category WHERE name = 'Shoes'), (SELECT id FROM sub_category WHERE name = 'Nike')),
-       ('Adidas Superstar', 79.99, 'Classic Adidas sneakers', 'adidas.jpg',
-        (SELECT id FROM category WHERE name = 'Shoes'), (SELECT id FROM sub_category WHERE name = 'Adidas')),
-       ('Smartwatch 2000', 149.99, 'Advanced smartwatch with health tracking features',
-        'smartwatch.jpg', (SELECT id FROM category WHERE name = 'Watches'),
-        (SELECT id FROM sub_category WHERE name = 'Smart-watch')),
-       ('Classic Analog Watch', 79.99, 'Elegant analog watch with leather strap',
-        'analog_watch.jpg', (SELECT id FROM category WHERE name = 'Watches'),
-        (SELECT id FROM sub_category WHERE name = 'Analog-watch')),
-       ('DSLR Camera', 499.99, 'Professional-grade DSLR camera', 'camera.jpg',
-        (SELECT id FROM category WHERE name = 'Electronics'), (SELECT id FROM sub_category WHERE name = 'Camera')),
-       ('Telephoto Lens', 199.99, 'High-quality telephoto lens for DSLR cameras', 'lens.jpg',
-        (SELECT id FROM category WHERE name = 'Electronics'), (SELECT id FROM sub_category WHERE name = 'Lens'));
+-- Inserting dummy data into the 'products' table
+INSERT INTO products (name, price, quantity, description, image_url, category_id, sub_category_id)
+VALUES ('Nike T-Shirt', 20.00, 100, 'The Nike T-Shirt', 'tshirt.jpeg', 1, 1),
+       ('Nike Air Max 270', 150.00, 100, 'The Nike Air Max 270', 'shoe1.jpeg', 2, 5),
+       ('Adidas Ultra Boost', 180.00, 100, 'The Adidas Ultra Boost', 'shoe2.jpeg', 2, 5),
+       ('Nike Air Force 1', 100.00, 100, 'The Nike Air Force 1', 'shoe3.jpeg', 2, 5),
+       ('Rolex Daytona', 15000.00, 10, 'The Rolex Daytona', 'analogwatch1.jpeg', 3, 2),
+       ('Rolex Submariner', 10000.00, 10, 'The Rolex Submariner', 'analogwatch2.jpeg', 3, 2),
+       ('Apple Watch Series 5', 400.00, 50, 'The Apple Watch Series 5', 'smartwatch1.jpeg', 3, 3),
+       ('Samsung Galaxy Watch', 300.00, 50, 'The Samsung Galaxy Watch', 'smartwatch2.jpeg', 3, 3),
+       ('Nikon D850', 2500.00, 50, 'The Nikon D850', 'camera.jpeg', 4, NULL),
+       ('Sony WH-1000XM3', 350.00, 50, 'The Sony WH-1000XM3', 'electronics-cat.jpeg', NULL, NULL);

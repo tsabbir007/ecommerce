@@ -20,14 +20,13 @@ if (isset($_POST['submit'])) {
     }
 
     $user_id = $_SESSION['user']['id'];
-    $user_id = 15;
     $insert_order_query = "INSERT INTO orders (user_id, name, email, phone, address, post_code, country,payment_method, total) VALUES ('$user_id', '$name', '$email', '$phone', '$address', '$post_code', '$country','$payment_method', '$total')";
     if (mysqli_query($con, $insert_order_query)) {
         $order_id = mysqli_insert_id($con);
         if (isset($_SESSION['cart'])) {
             foreach ($_SESSION['cart'] as $key => $value) {
                 $product_id = $value['id'];
-                $quantity = 1;
+                $quantity = $value['quantity'];
                 $price = $value['price'];
                 $insert_order_items_query = "INSERT INTO order_items (order_id, product_id, quantity, price) VALUES ('$order_id', '$product_id', '$quantity', '$price')";
                 if (mysqli_query($con, $insert_order_items_query)) {

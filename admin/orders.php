@@ -3,7 +3,7 @@ global $con;
 include '../includes/config.php';
 include 'header.php';
 
-$fetch_orders_query = "SELECT * FROM orders";
+$fetch_orders_query = "SELECT * FROM orders ORDER BY id DESC";
 $result = mysqli_query($con, $fetch_orders_query);
 ?>
 <div class="container mt-5">

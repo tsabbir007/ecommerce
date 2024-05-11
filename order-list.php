@@ -47,7 +47,7 @@ include 'common/nav.php';
                             <tbody>
                                 <?php
                                 $user_id = $_SESSION['user']['id'];
-                                $select_order_query = "SELECT * FROM orders WHERE user_id = '$user_id'";
+                                $select_order_query = "SELECT * FROM orders WHERE user_id = '$user_id ' ORDER BY id DESC";
                                 $result = mysqli_query($con, $select_order_query);
                                 if (mysqli_num_rows($result) > 0) {
                                     while ($row = mysqli_fetch_assoc($result)) {

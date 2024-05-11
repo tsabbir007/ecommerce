@@ -10,7 +10,7 @@ if (isset($_POST['order_id'])) {
         echo "<tr>";
         echo "<td>".$row['name']."</td>";
         echo "<td>".$row['quantity']."</td>";
-        echo "<td>".$row['price']."</td>";
+        echo "<td>".$row['quantity']. "x    $".$row['price']."</td>";
         echo "</tr>";
     }
 }

@@ -121,11 +121,11 @@ include 'common/nav.php';
                                 if (isset($_SESSION['cart'])) {
                                     $total = 0;
                                     foreach ($_SESSION['cart'] as $key => $value) {
-                                        $total += $value['price'];
+                                        $total += $value['price'] * $value['quantity'];
                                         ?>
                                         <li class="d-flex align-items-center justify-content-between"><strong
-                                                    class="small fw-bold"><?php echo $value['name']; ?></strong><span
-                                                    class="text-muted small">$<?php echo $value['price']; ?></span></li>
+                                                    class="small fw-bold"><?php echo $value['name'] ?></strong><span
+                                                    class="text-muted small">$<?php echo $value['price']. " x ". $value['quantity'] . " = $".  $value['price']*$value['quantity']; ?></span></li>
                                         <li class="border-bottom my-2"></li>
                                         <?php
                                     }

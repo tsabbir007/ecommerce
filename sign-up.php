@@ -16,13 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = mysqli_query($con, $insert_user_query);
 
     if ($result) {
-        $_SESSION['user'] = [
-            'id' => mysqli_insert_id($con),
-            'name' => $name,
-            'username' => $username,
-            'password' => $password
-        ];
-        header('Location: index.php');
+        header('Location: sign-in.php');
     } else {
         echo "Error creating user.";
     }
