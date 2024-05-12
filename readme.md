@@ -12,4 +12,5 @@ then, to upload dummy data,
 upload ./includes/dummy.sql 
 to your database.
 
-Here the video tutorial: 
+Here the video tutorial:
+https://vimeo.com/945571984?share=copy
